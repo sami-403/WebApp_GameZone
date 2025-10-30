@@ -1,7 +1,7 @@
 const getForm = document.querySelector(".form");
 
 function isValidEmail(email) {
-  const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
+  const emailRegex = /^[^\s@]+@[^s@]+.[^s@]+$/;
   return emailRegex.test(email);
 }
 

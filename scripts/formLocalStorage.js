@@ -25,7 +25,7 @@ getForm.addEventListener("submit", (e) => {
     setTimeout(clearFeedback, 3000);
   }
 
-  if (getEmail === "" || getMessage === "") {
+  if (getEmail === " " || getMessage === " ") {
     showError("*Preencha todos os campos!");
     return;
   }

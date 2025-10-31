@@ -1,7 +1,7 @@
 const getForm = document.querySelector(".form");
 
 function isValidEmail(email) {
-  const emailRegex = /^[^\s@]+@[^s@]+.[^s@]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
@@ -41,7 +41,7 @@ getForm.addEventListener("submit", (e) => {
     timestamp: new Date(),
   };
 
-  localStorage.setItem(dataContact.email, JSON.stringify(dataContact));
+  localStorage.setItem(`contact_${Date.now()}`, JSON.stringify(dataContact));
   getForm.reset();
   showSucess();
 });

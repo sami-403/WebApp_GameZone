@@ -1,10 +1,13 @@
-let games = [
-    {
+let games = JSON.parse(localStorage.getItem("games"));
+
+if (!games){
+    games = [
+        {
         title: "Celeste",
         developer: "Maddy Makes Games",
         releaseYear: 2018,
         platforms : ["PC", "CONSOLE"],
-        stars: 3,
+        stars: 0,
         path: "img/celeste.jpg",
         id: 1
     },
@@ -13,7 +16,7 @@ let games = [
         developer: "Infinite Fall",
         releaseYear: 2017,
         platforms : ["PC", "CONSOLE"],
-        stars: 2,
+        stars: 0,
         path: "img/nightInTheWoods.jpg",
         id: 2
     },
@@ -22,7 +25,7 @@ let games = [
         developer: "Eliza Velasquez, Night School Studio",
         releaseYear: 2016,
         platforms : ["PC", "CONSOLE"],
-        stars: 5,
+        stars: 0,
         path: "img/oneShot.jpg",
         id: 3
     },
@@ -36,6 +39,8 @@ let games = [
         id: 4
     }
 ];
+    localStorage.setItem("games", JSON.stringify(games));
+}
 
 const gameContainer = document.querySelector('.jogos-principal');
 
@@ -126,14 +131,18 @@ gameContainer.addEventListener("click", function (e) {
 
     const star = e.target;
     const parent = star.parentElement;
-    const children = Array.from(parent.children)
+    const children = Array.from(parent.children);
     const index = children.indexOf(star) + 1;
     const gameCard = parent.parentElement;
 
     for (let i = 0; i < games.length; i++) {
         if (games[i].id == gameCard.id) {
+
             games[i].stars = index;
-            renderGames(games, gameContainer); 
+
+            localStorage.setItem("games", JSON.stringify(games));
+            
+            renderGames(games, gameContainer);
         }
     }
 });

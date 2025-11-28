@@ -1,4 +1,4 @@
-// Lista de jogos
+// Lista de jogos (Dados)
 const games = [
   {
     id: 1,
@@ -28,7 +28,6 @@ const games = [
     price: 80,
     path: "img/Sonic_Mania_capa (1).png",
   },
-
   {
     id: 5,
     title: "Disco Elysium",
@@ -129,18 +128,20 @@ const games = [
   },
 ];
 
-// seletores
+// Elementos do DOM
 const gameContainer = document.querySelector(".imagens-flex");
 const btnPC = document.querySelectorAll(".dispositivos .botao")[0];
 const btnConsole = document.querySelectorAll(".dispositivos .botao")[1];
 const btnPortatil = document.querySelectorAll(".dispositivos .botao")[2];
 const btnTodos = document.querySelector(".botao-jogos");
-const searchInputs = document.querySelectorAll(".searchInput");
+const searchInputs = document.querySelectorAll(".searchInput"); // Pega input Mobile e Desktop
 
+// Variáveis de controle
 let platformFilter = [];
 let searchTerm = "";
-let showAll = false; // controla o "mostrar mais"
+let showAll = false;
 
+// Cria o HTML do card do jogo
 function createGameCard(game) {
   const card = document.createElement("div");
   card.classList.add("gameCard");
@@ -159,6 +160,7 @@ function createGameCard(game) {
   return card;
 }
 
+// Renderiza os jogos na tela (controla limite de 4 ou todos)
 function renderCatalogo(list) {
   gameContainer.innerHTML = "";
 
@@ -169,6 +171,7 @@ function renderCatalogo(list) {
   btnTodos.textContent = showAll ? "Mostrar menos" : "Ver todos os Jogos";
 }
 
+// Aplica filtros de plataforma e busca simultaneamente
 function filterGames() {
   const filtered = games.filter((game) => {
     const matchesPlatform =
@@ -184,6 +187,7 @@ function filterGames() {
   renderCatalogo(filtered);
 }
 
+// Ativa/Desativa filtro de plataforma no botão
 function togglePlatform(platform, button) {
   button.classList.toggle("clicked");
 
@@ -196,6 +200,7 @@ function togglePlatform(platform, button) {
   filterGames();
 }
 
+// Eventos de clique nos filtros
 btnPC.addEventListener("click", () => togglePlatform("PC", btnPC));
 btnConsole.addEventListener("click", () =>
   togglePlatform("Console", btnConsole)
@@ -204,19 +209,20 @@ btnPortatil.addEventListener("click", () =>
   togglePlatform("Portátil", btnPortatil)
 );
 
+// Botão "Ver todos"
 btnTodos.addEventListener("click", () => {
   showAll = !showAll;
   filterGames();
 });
 
+// Evento de busca (Sincroniza inputs do PC e Mobile)
 searchInputs.forEach((input) => {
   input.addEventListener("input", (e) => {
     searchTerm = e.target.value;
-
-    searchInputs.forEach((i) => (i.value = searchTerm));
-
+    searchInputs.forEach((i) => (i.value = searchTerm)); // Atualiza o outro input
     filterGames();
   });
 });
 
+// Inicialização
 renderCatalogo(games);

@@ -16,10 +16,12 @@ body {
   min-height: 100vh;
   background: #000;
 }
+
 .header-container {
   background: #0a0f0d;
   padding-inline: 16px;
 }
+
 .nav {
   max-width: 1280px;
   height: 8vh;
@@ -28,43 +30,55 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .logo-gamezone {
   font-family: Poppins, sans-serif;
   font-size: 26px;
   color: #66c0f4;
 }
+
 .lista-nav {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
+
 ul li {
   list-style: none;
 }
+
 .lista-nav li {
   text-transform: uppercase;
 }
+
 .mobile-menu {
   display: none;
 }
+
 .mobile-menu-icon {
   display: none;
 }
+
 .jogos-principal {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+  margin-bottom: 70px;
 }
+
 .titulo {
   display: flex;
   justify-content: space-around;
   padding-top: 100px;
 }
+
 .titulo-contato {
   display: flex;
   justify-content: left;
   padding-top: 100px;
   padding-left: 200px;
 }
+
 .form-container {
   width: 400px;
   background: linear-gradient(#0a0f0d, #0a0f0d) padding-box,
@@ -165,6 +179,7 @@ ul li {
   background-color: #fff;
   border-color: #fff;
 }
+
 .dispositivos {
   display: flex;
   justify-content: end;
@@ -187,18 +202,21 @@ ul li {
 .botao:hover {
   background-color: #777;
 }
+
 .imagens-flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  height: 322px;
+  height: auto;
   padding-top: 25px;
   gap: 5px;
 }
+
 .ver-jogos {
   display: flex;
   justify-content: center;
   padding-top: 50px;
 }
+
 .botao-jogos {
   width: 268px;
   height: 66px;
@@ -207,6 +225,7 @@ ul li {
   border: none;
   border-radius: 5px;
 }
+
 .rodape {
   background-color: #0a0f0d;
   max-width: 1500px;
@@ -217,17 +236,40 @@ ul li {
   display: flex;
   justify-content: space-around;
 }
+
 .rodape li {
   list-style: none;
 }
+
 .rodape li:hover {
   color: #66c0f4;
 }
+
 .gamezone-rodape {
   font-size: 30px;
   color: #66c0f4;
 }
 
+.searchInput {
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #414141;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.searchInput::placeholder {
+  color: #888;
+  opacity: 1;
+}
+
+/* Esconde no Desktop */
+.mobile-search-bar {
+  display: none;
+}
+
+/* --- ESTILOS MOBILE --- */
 @media (max-width: 1024px) {
   .botao-jogos {
     margin-top: 100px;
@@ -236,10 +278,31 @@ ul li {
     margin-top: 380px;
   }
 }
+
 @media (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
+
+  /* BARRA DE PESQUISA (Voltou para Flexbox) */
+  .mobile-search-bar {
+    display: block;
+    flex: 1; /* Ocupa o espaço entre a Logo e o Menu */
+    margin: 0 15px; /* Espaço lateral para não grudar */
+  }
+
+  .mobile-search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #414141;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+  }
+
+  /* HEADER UNIFICADO */
   .nav {
     position: fixed;
     top: 0;
@@ -254,39 +317,46 @@ ul li {
     box-sizing: border-box;
     z-index: 1000;
   }
+
+  .logo-gamezone {
+    font-size: 20px; /* Logo um pouco menor para dar espaço */
+    padding-top: 0;
+  }
+
   .lista-nav {
     display: none;
   }
-  .logo-gamezone {
-    font-size: 22px;
-    padding-top: 15px;
-  }
+
   .mobile-menu-icon {
     display: flex;
     align-items: center;
   }
+
   .mobile-menu-icon button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding-top: 15px;
+    padding-top: 0;
   }
+
   .mobile-menu {
     display: block;
     position: fixed;
     top: 60px;
     right: 0;
     width: 70%;
-    background-color: rgba(10, 15, 13, 0.9);
+    background-color: rgba(10, 15, 13, 0.95);
     border-radius: 0 0 10px 10px;
     padding: 16px;
     z-index: 999;
     transform: translateX(100%);
     transition: transform 0.3s ease;
   }
+
   .mobile_nav_list {
     padding-left: 15px;
   }
+
   .titulo {
     justify-content: space-between;
     font-size: 10px;
@@ -294,23 +364,29 @@ ul li {
     align-items: center;
     gap: 15px;
   }
+
   h1 {
     justify-content: center;
   }
+
   .botao-jogos {
     margin-top: 500px;
   }
+
   .imagens-flex {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     margin-bottom: 500px;
+    margin-top: 20px;
   }
+
   .form-container {
     width: 100%;
     padding: 16px;
   }
+
   .rodape {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -320,12 +396,15 @@ ul li {
     margin-top: 20px;
     position: sticky;
   }
+
   .gamezone-rodape {
     font-size: 20px;
   }
+
   .lista2-rodape {
     padding-top: 10px;
   }
+
   .icons-social {
     font-size: 20px;
     align-items: center;
@@ -357,14 +436,10 @@ ul li {
   height: 300px;
 }
 
-.imagens-flex {
-  margin-top: 20px;
-}
-
 .stars-container {
   display: flex;
   position: absolute;
-  bottom: 4.5px;
+  bottom: 4px;
   width: 100%;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.44);
@@ -379,12 +454,3 @@ ul li {
 .stars-container img:hover {
   cursor: pointer;
 }
-
-/* 
-.upperLayer {
-  width: 200px;
-  height: 40px;
-  position: absolute;
-  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.788), black);
-  bottom: 35px;
-} */

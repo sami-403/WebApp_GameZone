@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a511313589.js" crossorigin="anonymous"></script>
+    <title>GameZone</title>
+</head>
+
+<body>
+    <header class="header-container">
+        <nav class="nav">
+            <a class="logo-gamezone" href="#">GameZone</a>
+
+            <ul class="lista-nav">
+                <a href="index.html">
+                    <li>Catálogo</li>
+                </a>
+                <a href="promocoes.html">
+                    <li>Promoções</li>
+                </a>
+                <a href="indie.html">
+                    <li>Indie</li>
+                </a>
+                <a href="lancamentos.html">
+                    <li>Lançamentos</li>
+                </a>
+                <a href="vendidos.html">
+                    <li>Mais vendidos</li>
+                </a>
+                <a href="favoritos.html">
+                    <li>Favoritos</li>
+                </a>
+                <a href="fale-conosco.html">
+                    <li>Fale conosco</li>
+                </a>
+            </ul>
+
+            <div class="mobile-menu-icon">
+                <button>
+                    <img class="icon" src="img/menu_white_36dp.svg" alt="" />
+                </button>
+            </div>
+
+            <div class="mobile-menu">
+                <ul class="mobile_nav_list">
+                    <a href="index.html">
+                        <li>Catálogo</li>
+                    </a>
+                    <br />
+                    <a href="promocoes.html">
+                        <li>Promoções</li>
+                    </a>
+                    <br />
+                    <a href="indie.html">
+                        <li>Indie</li>
+                    </a>
+                    <br />
+                    <a href="lancamentos.html">
+                        <li>Lançamentos</li>
+                    </a>
+                    <br />
+                    <a href="vendidos.html">
+                        <li>Mais vendidos</li>
+                    </a>
+                    <br />
+                    <a href="favoritos.html">
+                        <li>Favoritos</li>
+                    </a>
+                    <br />
+                    <a href="fale-conosco.html">
+                        <li>Fale conosco</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="titulo">
+        <h1>Jogos Favoritos</h1>
+        <div class="dispositivos">
+            <button class="botao">PC</button>
+            <button class="botao">Console</button>
+            <button class="botao">Dispositivos Portáteis</button>
+        </div>
+    </div>
+    <div id="fav-list" class="fav-grid"></div>
+    <script src="scripts/favorites.js"></script>
+    <script src="scripts/mobileMenu.js"></script>
+</body>

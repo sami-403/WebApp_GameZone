@@ -1,0 +1,44 @@
+let games = [
+  {
+    id: 1,
+    title: "Tomb Raider",
+    developer: "Crystal Dynamics",
+    releaseYear: 2013,
+    platforms: ["PC", "CONSOLE"],
+    stars: 4,
+    path: "img/tombRaider.jpg",
+    about: "Reboot da franquia que mostra a origem de Lara Croft. Mistura ação, exploração e puzzles, com foco em sobrevivência e narrativa emocional."
+  },
+  {
+    id: 2,
+    title: "Street Fighter IV",
+    developer: "Capcom",
+    releaseYear: 2008,
+    platforms: ["PC", "CONSOLE"],
+    stars: 5,
+    path: "img/streetFighter4.jpg",
+    about: "Clássico dos jogos de luta que trouxe a série de volta em 3D com jogabilidade 2D. Conhecido pelo elenco icônico, bons controles e forte cena competitiva."
+  },
+  {
+    id: 3,
+    title: "The Legend of Zelda: Tears of the Kingdom",
+    developer: "Nintendo EPD",
+    releaseYear: 2023,
+    platforms: ["CONSOLE"],
+    stars: 5,
+    path: "img/zeldaTears.jpg",
+    about: "Sequência épica de Breath of the Wild, com mundo aberto expansivo, grande ênfase em exploração, invenção e liberdade do jogador para resolver desafios."
+  },
+  {
+    id: 4,
+    title: "Sonic Mania",
+    developer: "Christian Whitehead / Headcannon / PagodaWest Games",
+    releaseYear: 2017,
+    platforms: ["PC", "CONSOLE"],
+    stars: 4,
+    path: "img/sonicMania.jpg",
+    about: "Homenagem aos clássicos 2D do Sonic com fases remasterizadas e design novo. Rapidez, precisão e sensação retrô são os pontos fortes."
+  }
+];
+
+export {games}

@@ -380,6 +380,34 @@ ul li {
   cursor: pointer;
 }
 
+.favbutton {
+  color: #000;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  opacity: 0.5;
+}
+
+.favbutton:hover{
+  opacity: 1;
+}
+
+.fav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+
+.fav-grid img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+}
 /* 
 .upperLayer {
   width: 200px;

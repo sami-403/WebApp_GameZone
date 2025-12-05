@@ -1,103 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/a511313589.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>GameZone</title>
-  </head>
-  <body>
-     <header class="header-container">
-      <nav class="nav">
-        <a class="logo-gamezone" href="#">GameZone</a>
 
-        <ul class="lista-nav">
-          <a href="index.html"> <li>Catálogo</li> </a>
-          <a href="promocoes.html"> <li>Promoções</li> </a>
-          <a href="indie.html"> <li>Indie</li> </a>
-          <a href="lancamentos.html"> <li>Lançamentos</li> </a>
-          <a href="vendidos.html"> <li>Mais vendidos</li> </a>
-          <a href="fale-conosco.html"> <li>Fale conosco</li> </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a511313589.js" crossorigin="anonymous"></script>
+  <title>GameZone</title>
+</head>
+
+<body>
+  <header class="header-container">
+    <nav class="nav">
+      <a class="logo-gamezone" href="#">GameZone</a>
+
+      <ul class="lista-nav">
+        <a href="index.html">
+          <li>Catálogo</li>
+        </a>
+        <a href="promocoes.html">
+          <li>Promoções</li>
+        </a>
+        <a href="indie.html">
+          <li>Indie</li>
+        </a>
+        <a href="lancamentos.html">
+          <li>Lançamentos</li>
+        </a>
+        <a href="vendidos.html">
+          <li>Mais vendidos</li>
+        </a>
+        <a href="favoritos.html">
+          <li>Favoritos</li>
+        </a>
+
+        <a href="fale-conosco.html">
+          <li>Fale conosco</li>
+        </a>
+      </ul>
+
+      <div class="mobile-menu-icon">
+        <button>
+          <img class="icon" src="img/menu_white_36dp.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="mobile-menu">
+        <ul class="mobile_nav_list">
+          <a href="index.html">
+            <li>Catálogo</li>
+          </a>
+          <br />
+          <a href="promocoes.html">
+            <li>Promoções</li>
+          </a>
+          <br />
+          <a href="indie.html">
+            <li>Indie</li>
+          </a>
+          <br />
+          <a href="lancamentos.html">
+            <li>Lançamentos</li>
+          </a>
+          <br />
+          <a href="vendidos.html">
+            <li>Mais vendidos</li>
+          </a>
+          <br />
+          <a href="favoritos.html">
+            <li>Favoritos</li>
+          </a>
+          <br />
+          <a href="fale-conosco.html">
+            <li>Fale conosco</li>
+          </a>
         </ul>
-
-        <div class="mobile-menu-icon">
-          <button>
-            <img class="icon" src="img/menu_white_36dp.svg" alt="" />
-          </button>
-        </div>
-
-        <div class="mobile-menu">
-          <ul class="mobile_nav_list">
-            <a href="index.html"> <li>Catálogo</li> </a>
-            <br />
-            <a href="promocoes.html"> <li>Promoções</li> </a>
-            <br />
-            <a href="indie.html"> <li>Indie</li> </a>
-            <br />
-            <a href="lancamentos.html"> <li>Lançamentos</li> </a>
-            <br />
-            <a href="vendidos.html"> <li>Mais vendidos</li> </a>
-            <br />
-            <a href="fale-conosco.html"> <li>Fale conosco</li> </a>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <div class="titulo-contato">
-      <h1>Fale Conosco</h1>
-    </div>
-    <div class="jogos-principal">
-      <div class="form-container">
-        <form class="form">
-          <div class="form-group">
-            <label for="email">Seu Email</label>
-            <input type="text" id="email" name="email" required="" />
-          </div>
-          <div class="form-group">
-            <label for="textarea">Como podemos te ajudar?</label>
-            <textarea
-              name="textarea"
-              id="textarea"
-              rows="10"
-              cols="50"
-              required=""
-            ></textarea>
-
-            <div id="feedback_area"></div>
-          </div>
-          <button class="form-submit-btn" type="submit">Enviar</button>
-        </form>
       </div>
+    </nav>
+  </header>
+
+  <div class="titulo-contato">
+    <h1>Fale Conosco</h1>
+  </div>
+  <div class="jogos-principal">
+    <div class="form-container">
+      <form class="form">
+        <div class="form-group">
+          <label for="email">Seu Email</label>
+          <input type="text" id="email" name="email" required="" />
+        </div>
+        <div class="form-group">
+          <label for="textarea">Como podemos te ajudar?</label>
+          <textarea name="textarea" id="textarea" rows="10" cols="50" required=""></textarea>
+
+          <div id="feedback_area"></div>
+        </div>
+        <button class="form-submit-btn" type="submit">Enviar</button>
+      </form>
     </div>
+  </div>
 
-    <footer class="rodape">
-      <ul class="lista1-rodape">
-        <li class="gamezone-rodape">GameZone</li>
-        <li>© 2025 GameZone. Todos os direitos reservados.</li>
-        <li>Site feito por:</li>
-        <li>------------</li>
-        <li>--------------</li>
-      </ul>
+  <footer class="rodape">
+    <ul class="lista1-rodape">
+      <li class="gamezone-rodape">GameZone</li>
+      <li>© 2025 GameZone. Todos os direitos reservados.</li>
+      <li>Site feito por:</li>
+      <li>------------</li>
+      <li>--------------</li>
+    </ul>
 
-      <ul class="lista2-rodape">
-        <li>Sobre nós</li>
-        <li>Termos legais</li>
-        <li>Política de Privacidade</li>
-        <li>Cookies</li>
-        <li>Suporte</li>
-      </ul>
+    <ul class="lista2-rodape">
+      <li>Sobre nós</li>
+      <li>Termos legais</li>
+      <li>Política de Privacidade</li>
+      <li>Cookies</li>
+      <li>Suporte</li>
+    </ul>
 
-      <div class="icons-social">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-twitter"></i>
-      </div>
-    </footer>
-  </body>
-  <script src="./scripts/formLocalStorage.js"></script>
-  <script src="./scripts/mobileMenu.js"></script>
+    <div class="icons-social">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+    </div>
+  </footer>
+</body>
+<script src="./scripts/formLocalStorage.js"></script>
+<script src="./scripts/mobileMenu.js"></script>
+
 </html>

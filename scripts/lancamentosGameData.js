@@ -6,7 +6,7 @@ let games = [
     releaseYear: 2013,
     platforms: ["PC", "CONSOLE"],
     stars: 4,
-    path: "img/tombRaider.jpg",
+    path: "img/eOtEAB7 (1).jpg",
     about: "Reboot da franquia que mostra a origem de Lara Croft. Mistura ação, exploração e puzzles, com foco em sobrevivência e narrativa emocional."
   },
   {
@@ -16,7 +16,7 @@ let games = [
     releaseYear: 2008,
     platforms: ["PC", "CONSOLE"],
     stars: 5,
-    path: "img/streetFighter4.jpg",
+    path: "img/SFIVcover (1).jpg",
     about: "Clássico dos jogos de luta que trouxe a série de volta em 3D com jogabilidade 2D. Conhecido pelo elenco icônico, bons controles e forte cena competitiva."
   },
   {
@@ -26,7 +26,7 @@ let games = [
     releaseYear: 2023,
     platforms: ["CONSOLE"],
     stars: 5,
-    path: "img/zeldaTears.jpg",
+    path: "img/71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg",
     about: "Sequência épica de Breath of the Wild, com mundo aberto expansivo, grande ênfase em exploração, invenção e liberdade do jogador para resolver desafios."
   },
   {
@@ -36,7 +36,7 @@ let games = [
     releaseYear: 2017,
     platforms: ["PC", "CONSOLE"],
     stars: 4,
-    path: "img/sonicMania.jpg",
+    path: "img/Sonic_Mania_capa (1).png",
     about: "Homenagem aos clássicos 2D do Sonic com fases remasterizadas e design novo. Rapidez, precisão e sensação retrô são os pontos fortes."
   }
 ];

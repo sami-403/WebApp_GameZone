@@ -408,6 +408,15 @@ ul li {
   margin: 0 auto;
   border-radius: 5px;
 }
+.overlayScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #31313199;
+}
+
 /* 
 .upperLayer {
   width: 200px;

@@ -1,145 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/a511313589.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>GameZone</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a511313589.js" crossorigin="anonymous"></script>
-  <title>GameZone</title>
-</head>
+  <body>
+    <header class="header-container">
+      <nav class="nav">
+        <a class="logo-gamezone" href="#">GameZone</a>
 
-<body>
+        <input
+          type="text"
+          class="searchInput"
+          placeholder="Pesquisar jogos..."
+        />
 
-  <header class="header-container">
-    <nav class="nav">
-      <a class="logo-gamezone" href="#">GameZone</a>
+        <div class="mobile-search-bar">
+          <input type="text" placeholder="Pesquisar..." />
+        </div>
 
-      <ul class="lista-nav">
-        <a href="index.html">
-          <li>Catálogo</li>
-        </a>
-        <a href="promocoes.html">
-          <li>Promoções</li>
-        </a>
-        <a href="indie.html">
-          <li>Indie</li>
-        </a>
-        <a href="lancamentos.html">
-          <li>Lançamentos</li>
-        </a>
-        <a href="vendidos.html">
-          <li>Mais vendidos</li>
-        </a>
-        <a href="favoritos.html">
-          <li>Favoritos</li>
-        </a>
-        <a href="fale-conosco.html">
-          <li>Fale conosco</li>
-        </a>
+        <ul class="lista-nav">
+          <a href="index.html"><li>Catálogo</li></a>
+          <a href="promocoes.html"><li>Promoções</li></a>
+          <a href="indie.html"><li>Indie</li></a>
+          <a href="lancamentos.html"><li>Lançamentos</li></a>
+          <a href="vendidos.html"><li>Mais vendidos</li></a>
+          <a href="favoritos.html"><li>Favoritos</li></a>
+          <a href="fale-conosco.html"><li>Fale conosco</li></a>
+        </ul>
 
+        <div class="mobile-menu-icon">
+          <button>
+            <img class="icon" src="img/menu_white_36dp.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="mobile-menu">
+          <ul class="mobile_nav_list">
+            <a href="index.html"><li>Catálogo</li></a
+            ><br />
+            <a href="promocoes.html"><li>Promoções</li></a
+            ><br />
+            <a href="indie.html"><li>Indie</li></a
+            ><br />
+            <a href="lancamentos.html"><li>Lançamentos</li></a
+            ><br />
+            <a href="vendidos.html"><li>Mais vendidos</li></a
+            ><br />
+            <a href="favoritos.html"><li>Favoritos</li></a
+            ><br />
+            <a href="fale-conosco.html"><li>Fale conosco</li></a>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="titulo">
+      <h1>Jogos em Destaque</h1>
+      <div class="dispositivos">
+        <button class="botao">PC</button>
+        <button class="botao">Console</button>
+        <button class="botao">Dispositivos Portáteis</button>
+      </div>
+    </div>
+
+    <div class="jogos-principal">
+      <div class="imagens-flex">
+        <div style="position: relative">
+          <img
+            src="img/tomb_raider.jpg"
+            alt=""
+            width="250px"
+            height="322px"
+            data-id="1"
+            data-img="img/tomb_raider.jpg"
+          />
+          <button class="favbutton"></button>
+        </div>
+        <div style="position: relative">
+          <img
+            src="img/SFIVcover (1).jpg"
+            alt=""
+            width="230px"
+            height="315px"
+            data-id="2"
+            data-img="img/SFIVcover (1).jpg"
+          />
+          <button class="favbutton"></button>
+        </div>
+        <div style="position: relative">
+          <img
+            src="img/71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg"
+            alt=""
+            width="233px"
+            height="322px"
+            data-id="3"
+            data-img="img/71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg"
+          />
+          <button class="favbutton"></button>
+        </div>
+        <div style="position: relative">
+          <img
+            src="img/Sonic_Mania_capa (1).png"
+            alt=""
+            width="260px"
+            height="322px"
+            data-id="4"
+            data-img="img/Sonic_Mania_capa (1).png"
+          />
+          <button class="favbutton"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ver-jogos">
+      <button class="botao-jogos">Ver todos os Jogos</button>
+    </div>
+
+    <footer class="rodape">
+      <ul class="lista1-rodape">
+        <li class="gamezone-rodape">GameZone</li>
+        <li>© 2025 GameZone. Todos os direitos reservados.</li>
+        <li>Site feito por:</li>
+        <li>---------------</li>
+        <li>------------</li>
       </ul>
 
-      <div class="mobile-menu-icon">
-        <button>
-          <img class="icon" src="img/menu_white_36dp.svg" alt="" />
-        </button>
+      <ul class="lista2-rodape">
+        <li>Sobre nós</li>
+        <li>Termos legais</li>
+        <li>Política de Privacidade</li>
+        <li>Cookies</li>
+        <li>Suporte</li>
+      </ul>
+
+      <div class="icons-social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
       </div>
+    </footer>
 
-      <div class="mobile-menu">
-        <ul class="mobile_nav_list">
-          <a href="index.html">
-            <li>Catálogo</li>
-          </a>
-          <br />
-          <a href="promocoes.html">
-            <li>Promoções</li>
-          </a>
-          <br />
-          <a href="indie.html">
-            <li>Indie</li>
-          </a>
-          <br />
-          <a href="lancamentos.html">
-            <li>Lançamentos</li>
-          </a>
-          <br />
-          <a href="vendidos.html">
-            <li>Mais vendidos</li>
-          </a>
-          <br />
-          <a href="favoritos.html">
-            <li>Favoritos</li>
-          </a><br />
-          <a href="fale-conosco.html">
-            <li>Fale conosco</li>
-          </a>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <div class="titulo">
-    <h1>Jogos em Destaque</h1>
-    <div class="dispositivos">
-      <button class="botao">PC</button>
-      <button class="botao">Console</button>
-      <button class="botao">Dispositivos Portáteis</button>
-    </div>
-  </div>
-  <div class="jogos-principal">
-
-    <div class="imagens-flex">
-      <div style="position: relative">
-        <img src="img/tomb_raider.jpg" alt="" width="250px" height="322px" data-id="1" data-img="img/tomb_raider.jpg">
-        <button class="favbutton"></button>
-      </div>
-      <div style="position: relative">
-        <img src="img\SFIVcover (1).jpg" alt="" width="230px" height="315px" data-id="2"
-          data-img="img\SFIVcover (1).jpg">
-        <button class="favbutton"></button>
-      </div>
-      <div style="position: relative">
-        <img src="img\71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg" alt="" width="233px" height="322px" data-id="3"
-          data-img="img\71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg">
-        <button class="favbutton"></button>
-      </div>
-      <div style="position: relative">
-        <img src="img\Sonic_Mania_capa (1).png" alt="" width="260px" height="322px" data-id="4"
-          data-img="img\Sonic_Mania_capa (1).png">
-        <button class="favbutton"></button>
-      </div>
-    </div>
-  </div>
-
-  <div class="ver-jogos">
-    <button class="botao-jogos">Ver todos os Jogos</button>
-  </div>
-
-  <footer class="rodape">
-    <ul class="lista1-rodape">
-      <li class="gamezone-rodape">GameZone</li>
-      <li>© 2025 GameZone. Todos os direitos reservados.</li>
-      <li>Site feito por:</li>
-      <li>---------------</li>
-      <li>------------</li>
-    </ul>
-
-    <ul class="lista2-rodape">
-      <li>Sobre nós</li>
-      <li>Termos legais</li>
-      <li>Política de Privacidade</li>
-      <li>Cookies</li>
-      <li>Suporte</li>
-    </ul>
-
-    <div class="icons-social">
-      <i class="fa-brands fa-facebook"></i>
-      <i class="fa-brands fa-twitter"></i>
-    </div>
-  </footer>
-  <script type="module" src="scripts/addfavorites.js"></script>
-  <script src="./scripts/mobileMenu.js"></script>
-</body>
-
+    <script type="module" src="./scripts/mobileMenu.js"></script>
+    <script type="module" src="./scripts/searchFilter.js"></script>
+  </body>
 </html>

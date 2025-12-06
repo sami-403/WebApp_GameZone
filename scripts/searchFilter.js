@@ -5,7 +5,7 @@ const games = [
     title: "Tomb Raider",
     platform: "PC",
     price: 180,
-    path: "img/eOtEAB7 (1).jpg",
+    path: "../img/tomb_raider.jpg",
   },
   {
     id: 2,

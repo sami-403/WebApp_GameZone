@@ -6,7 +6,7 @@ let games = [
     releaseYear: 2013,
     platforms: ["PC", "CONSOLE"],
     stars: 4,
-    path: "img/eOtEAB7 (1).jpg",
+    path: "img/tomb_raider.jpg",
     about: "Reboot da franquia que mostra a origem de Lara Croft. Mistura ação, exploração e puzzles, com foco em sobrevivência e narrativa emocional."
   },
   {

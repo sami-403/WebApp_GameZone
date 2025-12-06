@@ -407,8 +407,14 @@ ul li {
     overflow-x: hidden;
   }
 
+  /* REGRA MODIFICADA: Oculta apenas o input desktop, que está fora do mobile-search-bar */
   .searchInput {
     display: none;
+  }
+
+  /* REGRA ADICIONADA: Garante que o input DENTRO do mobile-search-bar seja exibido (se tiver a classe searchInput) */
+  .mobile-search-bar .searchInput {
+    display: initial; /* Ou block, para reverter o display: none */
   }
 
   .mobile-search-bar {

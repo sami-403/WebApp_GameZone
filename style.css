@@ -417,7 +417,7 @@ ul li {
   border-radius: 5px;
 }
 .overlayScreen {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -425,6 +425,33 @@ ul li {
   background-color: #31313199;
 }
 
+.seeMoreCard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 10px;
+  background-color: rgb(106, 106, 114);
+  border-radius: 10px;
+}
+
+.seeMoreCard h2 {
+  text-align: center;
+}
+
+.seeMoreCard p {
+  margin: 5px 0px;
+}
+
+.seeMoreCloseBtn {
+  margin: 5px 0px;
+  padding: 5px;
+  box-shadow: none;
+  border-radius: 10px;
+  background-color: gray;
+  color: black;
+}
 /* 
 .upperLayer {
   width: 200px;

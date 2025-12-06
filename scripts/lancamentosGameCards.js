@@ -9,6 +9,9 @@ function renderCards(games, container) {
     sortedGames.forEach(game => {
         const cardContainer = document.createElement('div')
         cardContainer.style.position = "relative"
+        cardContainer.style.marginLeft = '10px'
+        cardContainer.style.marginRight = '10px'
+
         cardContainer.innerHTML = `
             <img src="${game.path}" class="gameCard" style="display: block; height:100%;"  data-id="${addId}" data-img="${game.path}"></img>
             <button class="favbutton"></button>
@@ -61,4 +64,7 @@ function removeOverlay() {
 }
 
 renderCards(games, gameCardsContainer);
-addFavorite()
+
+setTimeout(() => {
+    addFavorite();
+}, 0);

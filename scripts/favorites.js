@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const id = item.querySelector("img").dataset.id;
             favorites = favorites.filter(fav => fav.id !== id);
             localStorage.setItem("favorites", JSON.stringify(favorites));
-            item.remove();
+            item.parentElement.remove();
             if (favorites.length === 0) {
                 list.innerHTML = "<p>Sem favoritos</p>";
             }

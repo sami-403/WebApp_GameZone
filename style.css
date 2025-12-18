@@ -229,7 +229,7 @@ ul li {
   border-radius: 5px;
 }
 
-.imagens-flex {
+.imagens-flex, .fav-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   height: auto;
@@ -299,17 +299,9 @@ ul li {
   opacity: 1;
 }
 
-.fav-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  width: 100%;
-  padding: 20px;
-}
-
 .fav-grid img {
-  width: 200px;
-  height: 300px;
+  width: 250px;
+  height: 350px;
   object-fit: cover;
   display: block;
   margin: 0 auto;
@@ -506,7 +498,7 @@ ul li {
     margin-top: 500px;
   }
 
-  .imagens-flex {
+  .imagens-flex, .fav-grid {
     display: flex;
     flex-direction: column;
     align-items: center;

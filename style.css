@@ -498,7 +498,7 @@ ul li {
     margin-top: 500px;
   }
 
-  .imagens-flex, .fav-grid {
+  .imagens-flex, .fav-grid, .jogos-principal {
     display: flex;
     flex-direction: column;
     align-items: center;

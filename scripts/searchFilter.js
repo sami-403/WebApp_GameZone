@@ -1,132 +1,8 @@
-// Lista de jogos (Dados)
-const games = [
-  {
-    id: 1,
-    title: "Tomb Raider",
-    platform: "PC",
-    price: 180,
-    path: "../img/tomb_raider.jpg",
-  },
-  {
-    id: 2,
-    title: "Street Fighter IV",
-    platform: "Console",
-    price: 120,
-    path: "img/SFIVcover (1).jpg",
-  },
-  {
-    id: 3,
-    title: "Zelda The Legend of Zelda",
-    platform: "PC",
-    price: 200,
-    path: "img/71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg",
-  },
-  {
-    id: 4,
-    title: "Sonic Mania",
-    platform: "Portátil",
-    price: 80,
-    path: "img/Sonic_Mania_capa (1).png",
-  },
-  {
-    id: 5,
-    title: "Disco Elysium",
-    platform: "PC",
-    price: 120,
-    path: "img/7b7d20d1-9772-40c4-bf23-236cdc3388b1.jpg",
-  },
-  {
-    id: 6,
-    title: "Bayonetta",
-    platform: "Console",
-    price: 150,
-    path: "img/Bayonetta (Video Game) Font.jpg",
-  },
-  {
-    id: 7,
-    title: "Celeste",
-    platform: "PC",
-    price: 90,
-    path: "img/celeste.jpg",
-  },
-  {
-    id: 8,
-    title: "Cuphead",
-    platform: "PC",
-    price: 120,
-    path: "img/cuphead-cover.jpg",
-  },
-  {
-    id: 9,
-    title: "Call of Duty: Black Ops III",
-    platform: "Console",
-    price: 180,
-    path: "img/da4d0bfa-e9b8-492d-80bf-08aa25f54cea.jpg",
-  },
-  {
-    id: 10,
-    title: "DOOM",
-    platform: "PC",
-    price: 130,
-    path: "img/doom-cover.jpg",
-  },
-  {
-    id: 11,
-    title: "Final Fantasy VII Advent Children",
-    platform: "Console",
-    price: 160,
-    path: "img/Final Fantasy VII_ Advent Children.jpg",
-  },
-  {
-    id: 12,
-    title: "Super Mario Galaxy",
-    platform: "Console",
-    price: 200,
-    path: "img/Game_ Super Mario Galaxy.jpg",
-  },
-  {
-    id: 13,
-    title: "Minecraft",
-    platform: "PC",
-    price: 99,
-    path: "img/Minecraft.jpg",
-  },
-  {
-    id: 14,
-    title: "Night in the Woods",
-    platform: "Portátil",
-    price: 80,
-    path: "img/nightInTheWoods.jpg",
-  },
-  {
-    id: 15,
-    title: "OneShot",
-    platform: "PC",
-    price: 50,
-    path: "img/oneShot.jpg",
-  },
-  {
-    id: 16,
-    title: "Pokémon Sword",
-    platform: "Portátil",
-    price: 200,
-    path: "img/Pokemon Sword - Nintendo Switch (European Version) $51_91.jpg",
-  },
-  {
-    id: 17,
-    title: "Dragon Ball Sparking! Zero",
-    platform: "Console",
-    price: 250,
-    path: "img/Portada Oficial Dragón Ball Sparking Zero.jpg",
-  },
-  {
-    id: 18,
-    title: "Sonic the Hedgehog (2006)",
-    platform: "Console",
-    price: 100,
-    path: "img/Sonic the Hedgehog (jogo eletrônico de 2006) – Wikipédia, a enciclopédia livre.jpg",
-  },
-];
+import { getGames } from "../server/requisicoes.js";
+
+
+// Dados vindos da API
+let games = [];
 
 // Elementos do DOM
 const gameContainer = document.querySelector(".imagens-flex");
@@ -145,18 +21,18 @@ let showAll = false;
 function createGameCard(game) {
   const card = document.createElement("div");
   card.classList.add("gameCard");
-
-  const img = document.createElement("img");
-  img.src = game.path;
-  img.alt = game.title;
-  img.width = 250;
-  img.height = 322;
+  // Estrutura compatível com o sistema de favoritos
+  const wrapper = document.createElement("div");
+  wrapper.style.position = "relative";
+  wrapper.innerHTML = `
+    <img src="${game.path}" alt="${game.title}" data-id="${game.id}" data-img="${game.path}" />
+  `;
 
   const info = document.createElement("div");
   info.classList.add("game-info");
-  info.innerHTML = `<p>${game.title}</p><p>R$ ${game.price}</p>`;
+  info.innerHTML = `<p>${game.title}</p>${game.price !== undefined ? `<p>R$ ${game.price}</p>` : ""}`;
 
-  card.append(img, info);
+  card.append(wrapper, info);
   return card;
 }
 
@@ -174,14 +50,24 @@ function renderCatalogo(list) {
 // Aplica filtros de plataforma e busca simultaneamente
 function filterGames() {
   const filtered = games.filter((game) => {
-    const matchesPlatform =
-      platformFilter.length === 0 || platformFilter.includes(game.platform);
+    const title = (game.title || "").toLowerCase();
+    if (searchTerm && !title.includes(searchTerm.toLowerCase())) return false;
 
-    const matchesSearch = game.title
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+    if (platformFilter.length === 0) return true;
 
-    return matchesPlatform && matchesSearch;
+    // Normaliza plataformas (pode ser "PC" ou ["PC", "Console"])
+    let platforms = [];
+    if (Array.isArray(game.platforms)) {
+      platforms = game.platforms.map(p => p.toString().toUpperCase());
+    } else if (game.platform) {
+      platforms = [game.platform.toString().toUpperCase()];
+    } else if (game.platforms) { // Caso seja string única em 'platforms' por erro dbe dados
+       platforms = [game.platforms.toString().toUpperCase()];
+    }
+
+    return platformFilter.every((pf) =>
+      platforms.some((p) => p.includes(pf.toString().toUpperCase())),
+    );
   });
 
   renderCatalogo(filtered);
@@ -190,11 +76,11 @@ function filterGames() {
 // Ativa/Desativa filtro de plataforma no botão
 function togglePlatform(platform, button) {
   button.classList.toggle("clicked");
-
-  if (platformFilter.includes(platform)) {
-    platformFilter = platformFilter.filter((p) => p !== platform);
+  const normalized = platform.toString().toUpperCase();
+  if (platformFilter.includes(normalized)) {
+    platformFilter = platformFilter.filter((p) => p !== normalized);
   } else {
-    platformFilter.push(platform);
+    platformFilter.push(normalized);
   }
 
   filterGames();
@@ -203,10 +89,10 @@ function togglePlatform(platform, button) {
 // Eventos de clique nos filtros
 btnPC.addEventListener("click", () => togglePlatform("PC", btnPC));
 btnConsole.addEventListener("click", () =>
-  togglePlatform("Console", btnConsole)
+  togglePlatform("Console", btnConsole),
 );
 btnPortatil.addEventListener("click", () =>
-  togglePlatform("Portátil", btnPortatil)
+  togglePlatform("Portátil", btnPortatil),
 );
 
 // Botão "Ver todos"
@@ -224,5 +110,14 @@ searchInputs.forEach((input) => {
   });
 });
 
-// Inicialização
-renderCatalogo(games);
+// Inicialização: buscar dados da API
+getGames()
+  .then((data) => {
+    games = data;
+    renderCatalogo(games);
+  })
+  .catch((e) => {
+    console.error(e);
+    games = [];
+    renderCatalogo(games);
+  });

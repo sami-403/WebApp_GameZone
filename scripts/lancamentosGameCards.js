@@ -1,30 +1,54 @@
-import { getGames, createGame, updateGame, deleteGame } from "../server/requisicoes";
-import { addFavorite } from "./addfavorites.js";
+import { getGames } from "../server/requisicoes.js";
+import { updateFavoriteButtons } from "./addfavorites.js";
 
-let games = []
+const gameCardsContainer = document.querySelector('.gameCardsContainer');
+const body = document.querySelector('body');
+
+let games = [];
+
+const btnSeeMore = document.querySelector(".botao-jogos");
+let showAll = false;
+const INITIAL_LIMIT = 4;
 
 getGames()
   .then(data => {
-    games = data.filter(game => game?.indie !== true);
-    renderGames(games, gameContainer);
+    // Filtra jogos que NÃO são indie
+    games = data.filter(game => !game.indie);
+    renderCards(games, gameCardsContainer);
+    updateFavoriteButtons(); // Adiciona listeners após renderizar
   })
   .catch(e => console.error(e));
 
+// Add click listener for the button
+if (btnSeeMore) {
+    btnSeeMore.addEventListener("click", () => {
+        showAll = !showAll;
+        renderCards(games, gameCardsContainer);
+    });
+}
 
-const body = document.querySelector('body')
-const gameCardsContainer = document.querySelector('.gameCardsContainer')
-let addId = 10;
 function renderCards(games, container) {
-    const sortedGames = games.sort((a, b) => a.releaseYear - b.releaseYear)
-    sortedGames.forEach(game => {
+    container.innerHTML = ""; // Limpa container antes de renderizar
+    
+    // Sort by release year
+    const sortedGames = games.sort((a, b) => (a.releaseYear || 0) - (b.releaseYear || 0));
+    
+    // Determine which games to show
+    const visibleGames = showAll ? sortedGames : sortedGames.slice(0, INITIAL_LIMIT);
+
+    // Update button text
+    if (btnSeeMore) {
+        btnSeeMore.textContent = showAll ? "Mostrar menos" : "Ver todos os Jogos";
+    }
+    
+    visibleGames.forEach(game => {
         const cardContainer = document.createElement('div')
         cardContainer.style.position = "relative"
-        cardContainer.style.marginLeft = '10px'
-        cardContainer.style.marginRight = '10px'
+        cardContainer.classList.add("gameCard"); // Consistency
 
         cardContainer.innerHTML = `
-            <img src="${game.path}" class="gameCard" style="display: block; height:100%;"  data-id="${addId}" data-img="${game.path}"></img>
-            <button class="favbutton"></button>
+            <img src="${game.path}" data-id="${game.id}" data-img="${game.path}"></img>
+            <button class="favbutton">Favoritar</button>
         `
         const seeMoreButton = document.createElement('button')
         seeMoreButton.innerText = 'Veja mais'
@@ -32,17 +56,29 @@ function renderCards(games, container) {
         seeMoreButton.addEventListener('click', (event) => {
             removeOverlay();
             createOverlay();
+            
+            // Handle platforms being array or string
+            let platforms = "Não informado";
+            if (Array.isArray(game.platforms)) {
+                platforms = game.platforms.join(", ");
+            } else if (game.platform) {
+                platforms = game.platform;
+            } else if (game.platforms) {
+                platforms = game.platforms;
+            }
+
             const seeMoreCard = document.createElement('div')
             seeMoreCard.classList.add("seeMoreCard");
 
             seeMoreCard.innerHTML = `
                 <h2 class="seeMoreCardTitle">${game.title}</h2>
-                <p class="seeMoreCardDeveloper"><b>Developer:</b> ${game.developer}</p>
-                <p class="seeMoreCardYear"><b>Ano:</b> ${game.releaseYear}</p>
+                <p class="seeMoreCardDeveloper"><b>Developer:</b> ${game.developer || "Desconhecido"}</p>
+                <p class="seeMoreCardYear"><b>Ano:</b> ${game.releaseYear || "N/A"}</p>
                 <p class="seeMoreCardPlatforms"><b>Plataformas:</b> 
-                    ${game.platforms.join(", ")}
+                    ${platforms}
                 </p>
-                <p class="seeMoreCardAbout">${game.about}</p>
+                <p class="seeMoreCardAbout">${game.about || "Sem descrição disponível."}</p>
+                <p class="seeMoreCardPrice"><b>Preço:</b> ${game.price ? `R$ ${game.price}` : "Grátis"}</p>
                 <button class="seeMoreCloseBtn">Entendi</button>
             `;
 
@@ -54,8 +90,9 @@ function renderCards(games, container) {
         cardContainer.append(seeMoreButton)
 
         container.append(cardContainer);
-        ++addId;
     })
+    
+    updateFavoriteButtons(); // Ensure updated items get correct status
 }
 
 function createOverlay() {
@@ -72,9 +109,3 @@ function removeOverlay() {
         })
     }
 }
-
-renderCards(games, gameCardsContainer);
-
-setTimeout(() => {
-    addFavorite();
-}, 0);

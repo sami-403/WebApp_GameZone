@@ -1,5 +1,15 @@
-import { games } from "./lancamentosGameData.js";
+import { getGames, createGame, updateGame, deleteGame } from "../server/requisicoes";
 import { addFavorite } from "./addfavorites.js";
+
+let games = []
+
+getGames()
+  .then(data => {
+    games = data.filter(game => game?.indie !== true);
+    renderGames(games, gameContainer);
+  })
+  .catch(e => console.error(e));
+
 
 const body = document.querySelector('body')
 const gameCardsContainer = document.querySelector('.gameCardsContainer')

@@ -1,43 +1,15 @@
-let games = [
-    {
-        title: "Celeste",
-        developer: "Maddy Makes Games",
-        releaseYear: 2018,
-        platforms : ["PC", "CONSOLE"],
-        stars: 3,
-        path: "img/celeste.jpg",
-        id: 1
-    },
-    {
-        title: "Night in the Woods",
-        developer: "Infinite Fall",
-        releaseYear: 2017,
-        platforms : ["PC", "CONSOLE"],
-        stars: 2,
-        path: "img/nightInTheWoods.jpg",
-        id: 2
-    },
-    {
-        title: "One shot",
-        developer: "Eliza Velasquez, Night School Studio",
-        releaseYear: 2016,
-        platforms : ["PC", "CONSOLE"],
-        stars: 5,
-        path: "img/oneShot.jpg",
-        id: 3
-    },
-    {
-        title: "The whitchs house",
-        developer: "Fummy",
-        releaseYear: 2012,
-        platforms : ["PC"],
-        stars: 0,
-        path: "img/theWithchsHouse.jpg",
-        id: 4
-    }
-];
+import { getGames, createGame, updateGame, deleteGame } from "../server/requisicoes";
 
 const gameContainer = document.querySelector('.jogos-principal');
+
+let games = [];
+
+getGames()
+  .then(data => {
+    games = data.filter(game => game?.indie === true);
+    renderGames(games, gameContainer);
+  })
+  .catch(e => console.error(e));
 
 let genreFilter = [];
 
@@ -80,11 +52,7 @@ const createGameCard = (title, imgPath, starsToPlace, id) => {
     const upperLayer = document.createElement('div')
     upperLayer.classList.add('upperLayer')
 
-
-
-
     const stars = document.createElement('div')
-    // const starIconPath = (starsToPlace == 0) ? '../img/star-icons/unselected-star.png' : '../img/star-icons/selected-star.png'
     const selectedStarPath = 'img/star-icons/selected-star.png'
     const unselected = 'img/star-icons/unselected-star.png'
 
@@ -100,7 +68,6 @@ const createGameCard = (title, imgPath, starsToPlace, id) => {
 const renderGames = (gamesList, divToPlace) => {
     divToPlace.innerHTML = "";
     gamesList = gamesList.sort((a, b) => b.stars - a.stars);
-    //só pra ordenar msm, mas pode tirar se quiser
     
     gamesList.forEach(game => {
         const gameCard = createGameCard(game.title, game.path, game.stars, game.id);
@@ -108,8 +75,7 @@ const renderGames = (gamesList, divToPlace) => {
     })
 }
 
-renderGames(games, gameContainer)
-
+if (games.length) renderGames(games, gameContainer)
 
 function renderStars(qtdStars, divToRender, selectedStarPath, unselectedStarPath) {
     for(let i = 1; i <= 5; i++){

@@ -230,24 +230,41 @@ ul li {
 }
 
 .imagens-flex, .fav-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex; /* Changed from Grid to Flex to force row behavior */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: center; /* Center items */
   height: auto;
   padding-top: 25px;
-  gap: 5px;
+  gap: 20px; 
   margin-top: 20px;
 }
 
 .gameCard {
-  width: 200px;
-  height: fit-content;
+  width: 220px; /* Slightly wider to accommodate content */
+  height: 400px; /* Fixed height for uniformity */
   position: relative;
+  background-color: #0a0f0d; /* Background for card */
+  border-radius: 8px;
+  overflow: hidden; /* Ensure content doesn't spill */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
 }
 
 .gameCard img {
-  display: inline-block;
-  width: 200px;
-  height: 300px;
+  width: 100%;
+  height: 300px; /* Fixed height for images */
+  object-fit: cover; /* Ensures image covers area without distortion */
+  display: block;
+}
+
+.game-info {
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .stars-container {
@@ -270,6 +287,7 @@ ul li {
 }
 
 .favbutton,
+.remove-fav-button,
 .seeMoreButton {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -290,11 +308,18 @@ ul li {
   left: 10px;
 }
 
+.remove-fav-button {
+  left: 10px;
+  z-index: 100; /* Higher Z-index to ensure visibility */
+  background-color: rgba(200, 0, 0, 0.8); /* Red background to distinguish */
+}
+
 .seeMoreButton {
   right: 10px;
 }
 
 .favbutton:hover,
+.remove-fav-button:hover,
 .seeMoreButton:hover {
   opacity: 1;
 }
@@ -498,13 +523,23 @@ ul li {
     margin-top: 500px;
   }
 
-  .imagens-flex, .fav-grid, .jogos-principal {
+  .jogos-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
     margin-bottom: 500px;
     margin-top: 20px;
+  }
+
+  /* Allow game lists to remain row-based (wrapped) even on mobile */
+  .imagens-flex, .fav-grid {
+    display: flex;
+    flex-direction: row; /* Force row */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%; /* Ensure full width usage */
   }
 
   .form-container {

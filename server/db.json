@@ -1,5 +1,5 @@
 {
-    "games" : [
+    "games": [
         {
             "id": 1,
             "title": "Tomb Raider",
@@ -8,17 +8,19 @@
             "platforms": ["PC", "CONSOLE"],
             "stars": 4,
             "path": "img/tomb_raider.jpg",
-            "about": "Reboot da franquia que mostra a origem de Lara Croft. Mistura ação, exploração e puzzles, com foco em sobrevivência e narrativa emocional."
+            "about": "Reboot da franquia que mostra a origem de Lara Croft. Mistura ação, exploração e puzzles, com foco em sobrevivência e narrativa emocional.",
+            "price": 180
         },
         {
             "id": 2,
-            "title": "StreetFighter IV",
+            "title": "Street Fighter IV",
             "developer": "Capcom",
             "releaseYear": 2008,
             "platforms": ["PC", "CONSOLE"],
             "stars": 5,
             "path": "img/SFIVcover (1).jpg",
-            "about": "Clássico dos jogos de luta que trouxe a série de volta em 3D com jogabilidade 2D. Conhecido pelo elenco icônico, bons controles e forte cena competitiva."
+            "about": "Clássico dos jogos de luta que trouxe a série de volta em 3D com jogabilidade 2D. Conhecido pelo elenco icônico, bons controles e forte cena competitiva.",
+            "price": 120
         },
         {
             "id": 3,
@@ -28,7 +30,8 @@
             "platforms": ["CONSOLE"],
             "stars": 5,
             "path": "img/71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg",
-            "about": "Sequência épica de Breath of the Wild, com mundo aberto expansivo, grande ênfase em exploração, invenção e liberdade do jogador para resolver desafios."
+            "about": "Sequência épica de Breath of the Wild, com mundo aberto expansivo, grande ênfase em exploração, invenção e liberdade do jogador para resolver desafios.",
+            "price": 200
         },
         {
             "id": 4,
@@ -38,47 +41,165 @@
             "platforms": ["PC", "CONSOLE"],
             "stars": 4,
             "path": "img/Sonic_Mania_capa (1).png",
-            "about": "Homenagem aos clássicos 2D do Sonic com fases remasterizadas e design novo. Rapidez, precisão e sensação retrô são os pontos fortes."
+            "about": "Homenagem aos clássicos 2D do Sonic com fases remasterizadas e design novo. Rapidez, precisão e sensação retrô são os pontos fortes.",
+            "price": 80
         },
         {
-        "title": "Celeste",
-        "developer": "Maddy Makes Games",
-        "releaseYear": 2018,
-        "platforms" : ["PC", "CONSOLE"],
-        "stars": 3,
-        "path": "img/celeste.jpg",
-        "id": 5,
-        "indie": true
-    },
-    {
-        "title": "Night in the Woods",
-        "developer": "Infinite Fall",
-        "releaseYear": 2017,
-        "platforms" : ["PC", "CONSOLE"],
-        "stars": 2,
-        "path": "img/nightInTheWoods.jpg",
-        "id": 6,
-       " indie": true
-    },
-    {
-        "title": "One shot",
-        "developer": "Eliza Velasquez, Night School Studio",
-       "releaseYear": 2016,
-        "platforms" : ["PC", "CONSOLE"],
-        "stars": 5,
-        "path": "img/oneShot.jpg",
-        "id": 7,
-        "indie": true
-    },
-    {
-        "title": "The whitchs house",
-        "developer": "Fummy",
-        "releaseYear": 2012,
-        "platforms" : ["PC"],
-        "stars": 0,
-        "path": "img/theWithchsHouse.jpg",
-        "id": 8,
-       "indie": true
-    }
+            "id": 5,
+            "title": "Celeste",
+            "developer": "Maddy Makes Games",
+            "releaseYear": 2018,
+            "platforms": ["PC", "CONSOLE"],
+            "stars": 3,
+            "path": "img/celeste.jpg",
+            "indie": true,
+            "price": 90,
+            "about": "Um jogo de plataforma desafiador sobre escalar uma montanha e enfrentar seus demônios interiores."
+        },
+        {
+            "id": 6,
+            "title": "Night in the Woods",
+            "developer": "Infinite Fall",
+            "releaseYear": 2017,
+            "platforms": ["PC", "CONSOLE"],
+            "stars": 2,
+            "path": "img/nightInTheWoods.jpg",
+            "indie": true,
+            "price": 80,
+            "about": "Aventura narrativa sobre voltar para casa, mudança e crimes estranhos na floresta."
+        },
+        {
+            "id": 7,
+            "title": "OneShot",
+            "developer": "Eliza Velasquez, Night School Studio",
+            "releaseYear": 2016,
+            "platforms": ["PC", "CONSOLE"],
+            "stars": 5,
+            "path": "img/oneShot.jpg",
+            "indie": true,
+            "price": 50,
+            "about": "Um jogo de puzzle e aventura surreal onde você tem apenas uma chance."
+        },
+        {
+            "id": 8,
+            "title": "The Witch's House",
+            "developer": "Fummy",
+            "releaseYear": 2012,
+            "platforms": ["PC"],
+            "stars": 0,
+            "path": "img/theWithchsHouse.jpg",
+            "indie": true,
+            "about": "Um jogo de horror e RPG Maker focado em resolução de puzzles e atmosfera tensa."
+        },
+        {
+            "id": 9,
+            "title": "Disco Elysium",
+            "developer": "ZA/UM",
+            "releaseYear": 2019,
+            "platforms": ["PC"],
+            "price": 120,
+            "path": "img/7b7d20d1-9772-40c4-bf23-236cdc3388b1.jpg",
+            "about": "Um RPG revolucionário de mundo aberto. Você é um detetive com um sistema de habilidades único e todo um quarteirão para interrogar."
+        },
+        {
+            "id": 10,
+            "title": "Bayonetta",
+            "developer": "PlatinumGames",
+            "releaseYear": 2009,
+            "platforms": ["CONSOLE"],
+            "price": 150,
+            "path": "img/Bayonetta (Video Game) Font.jpg",
+            "about": "Ação frenética e estilosa com uma bruxa que usa armas nas mãos e pés para combater anjos."
+        },
+        {
+            "id": 11,
+            "title": "Cuphead",
+            "developer": "Studio MDHR",
+            "releaseYear": 2017,
+            "platforms": ["PC"],
+            "price": 120,
+            "path": "img/cuphead-cover.jpg",
+            "about": "Ação clássica de correr e atirar com foco em batalhas de chefes, inspirado em desenhos animados da década de 1930."
+        },
+        {
+            "id": 12,
+            "title": "Call of Duty: Black Ops III",
+            "developer": "Treyarch",
+            "releaseYear": 2015,
+            "platforms": ["CONSOLE"],
+            "price": 180,
+            "path": "img/da4d0bfa-e9b8-492d-80bf-08aa25f54cea.jpg",
+            "about": "Shooter em primeira pessoa futurista com modos campanha, multiplayer e zumbis."
+        },
+        {
+            "id": 13,
+            "title": "DOOM",
+            "developer": "id Software",
+            "releaseYear": 2016,
+            "platforms": ["PC"],
+            "price": 130,
+            "path": "img/doom-cover.jpg",
+            "about": "Demônios implacáveis, armas de destruição e movimento rápido e fluido formam a base deste combate em primeira pessoa intenso."
+        },
+        {
+            "id": 14,
+            "title": "Final Fantasy VII Advent Children",
+            "developer": "Square Enix",
+            "releaseYear": 2005,
+            "platforms": ["CONSOLE"],
+            "price": 160,
+            "path": "img/Final Fantasy VII_ Advent Children.jpg",
+            "about": "Filme/Mídia relacionada ao universo de FFVII, visualmente impressionante."
+        },
+        {
+            "id": 15,
+            "title": "Super Mario Galaxy",
+            "developer": "Nintendo EAD Tokyo",
+            "releaseYear": 2007,
+            "platforms": ["CONSOLE"],
+            "price": 200,
+            "path": "img/Game_ Super Mario Galaxy.jpg",
+            "about": "Aventura de plataforma 3D onde Mario viaja através de galáxias desafiando a gravidade."
+        },
+        {
+            "id": 16,
+            "title": "Minecraft",
+            "developer": "Mojang Studios",
+            "releaseYear": 2011,
+            "platforms": ["PC"],
+            "price": 99,
+            "path": "img/Minecraft.jpg",
+            "about": "Jogo de sandbox sobre colocar blocos e ir em aventuras. Explore mundos gerados aleatoriamente e construa coisas incríveis."
+        },
+        {
+            "id": 17,
+            "title": "Pokémon Sword",
+            "developer": "Game Freak",
+            "releaseYear": 2019,
+            "platforms": ["PORTÁTIL"],
+            "price": 200,
+            "path": "img/Pokemon Sword - Nintendo Switch (European Version) $51_91.jpg",
+            "about": "Explore a região de Galar, capture novos Pokémon e desafie os líderes de ginásio para se tornar o campeão."
+        },
+        {
+            "id": 18,
+            "title": "Dragon Ball Sparking! Zero",
+            "developer": "Spike Chunsoft",
+            "releaseYear": 2024,
+            "platforms": ["CONSOLE"],
+            "price": 250,
+            "path": "img/Portada Oficial Dragón Ball Sparking Zero.jpg",
+            "about": "O novo capítulo da lendária série Budokai Tenkaichi, trazendo batalhas 3D explosivas com um elenco massivo."
+        },
+        {
+            "id": 19,
+            "title": "Sonic the Hedgehog (2006)",
+            "developer": "Sonic Team",
+            "releaseYear": 2006,
+            "platforms": ["CONSOLE"],
+            "price": 100,
+            "path": "img/Sonic the Hedgehog (jogo eletrônico de 2006) – Wikipédia, a enciclopédia livre.jpg",
+            "about": "Aventura 3D do ouriço azul celebrando seu 15º aniversário. Conhecido por sua trama ambiciosa e desafios."
+        }
     ]
 }

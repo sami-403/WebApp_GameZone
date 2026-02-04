@@ -1,0 +1,84 @@
+{
+    "games" : [
+        {
+            "id": 1,
+            "title": "Tomb Raider",
+            "developer": "Crystal Dynamics",
+            "releaseYear": 2013,
+            "platforms": ["PC", "CONSOLE"],
+            "stars": 4,
+            "path": "img/tomb_raider.jpg",
+            "about": "Reboot da franquia que mostra a origem de Lara Croft. Mistura ação, exploração e puzzles, com foco em sobrevivência e narrativa emocional."
+        },
+        {
+            "id": 2,
+            "title": "StreetFighter IV",
+            "developer": "Capcom",
+            "releaseYear": 2008,
+            "platforms": ["PC", "CONSOLE"],
+            "stars": 5,
+            "path": "img/SFIVcover (1).jpg",
+            "about": "Clássico dos jogos de luta que trouxe a série de volta em 3D com jogabilidade 2D. Conhecido pelo elenco icônico, bons controles e forte cena competitiva."
+        },
+        {
+            "id": 3,
+            "title": "The Legend of Zelda: Tears of the Kingdom",
+            "developer": "Nintendo EPD",
+            "releaseYear": 2023,
+            "platforms": ["CONSOLE"],
+            "stars": 5,
+            "path": "img/71mDA8PIXeL._AC_UF1000,1000_QL80_ (1).jpg",
+            "about": "Sequência épica de Breath of the Wild, com mundo aberto expansivo, grande ênfase em exploração, invenção e liberdade do jogador para resolver desafios."
+        },
+        {
+            "id": 4,
+            "title": "Sonic Mania",
+            "developer": "Christian Whitehead / Headcannon / PagodaWest Games",
+            "releaseYear": 2017,
+            "platforms": ["PC", "CONSOLE"],
+            "stars": 4,
+            "path": "img/Sonic_Mania_capa (1).png",
+            "about": "Homenagem aos clássicos 2D do Sonic com fases remasterizadas e design novo. Rapidez, precisão e sensação retrô são os pontos fortes."
+        },
+        {
+        "title": "Celeste",
+        "developer": "Maddy Makes Games",
+        "releaseYear": 2018,
+        "platforms" : ["PC", "CONSOLE"],
+        "stars": 3,
+        "path": "img/celeste.jpg",
+        "id": 1,
+        "indie": true
+    },
+    {
+        "title": "Night in the Woods",
+        "developer": "Infinite Fall",
+        "releaseYear": 2017,
+        "platforms" : ["PC", "CONSOLE"],
+        "stars": 2,
+        "path": "img/nightInTheWoods.jpg",
+        "id": 2,
+       " indie": true
+    },
+    {
+        "title": "One shot",
+        "developer": "Eliza Velasquez, Night School Studio",
+       "releaseYear": 2016,
+        "platforms" : ["PC", "CONSOLE"],
+        "stars": 5,
+        "path": "img/oneShot.jpg",
+        "id": 3,
+        "indie": true
+    },
+    {
+        "title": "The whitchs house",
+        "developer": "Fummy",
+        "releaseYear": 2012,
+        "platforms" : ["PC"],
+        "stars": 0,
+        "path": "img/theWithchsHouse.jpg",
+        "id": 4,
+       "indie": true
+    }
+    ]
+}

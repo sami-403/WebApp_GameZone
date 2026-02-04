@@ -51,6 +51,13 @@ O foco do trabalho está no **aprendizado prático** de manipulação da **DOM**
 
 ---
 
+## Intruções para rodar: 
+
+- Instalar o Node.js (se não tiver).
+- Abrir o terminal na pasta do projeto.
+- Rodar npm install (para baixar o json-server).
+- Rodar o comando do servidor: **npx json-server --watch server/db.json --port 3000 --static** .
+
 ## 👨‍💻 Autores
 
 Projeto desenvolvido por Sãmily, Rafael Fagundes e Allan Rick, do curso de **Análise e Desenvolvimento de Sistemas – IFPB Campus Cajazeiras**,

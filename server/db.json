@@ -47,7 +47,7 @@
         "platforms" : ["PC", "CONSOLE"],
         "stars": 3,
         "path": "img/celeste.jpg",
-        "id": 1,
+        "id": 5,
         "indie": true
     },
     {
@@ -57,7 +57,7 @@
         "platforms" : ["PC", "CONSOLE"],
         "stars": 2,
         "path": "img/nightInTheWoods.jpg",
-        "id": 2,
+        "id": 6,
        " indie": true
     },
     {
@@ -67,7 +67,7 @@
         "platforms" : ["PC", "CONSOLE"],
         "stars": 5,
         "path": "img/oneShot.jpg",
-        "id": 3,
+        "id": 7,
         "indie": true
     },
     {
@@ -77,7 +77,7 @@
         "platforms" : ["PC"],
         "stars": 0,
         "path": "img/theWithchsHouse.jpg",
-        "id": 4,
+        "id": 8,
        "indie": true
     }
     ]

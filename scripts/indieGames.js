@@ -6,7 +6,8 @@ let games = [
         platforms : ["PC", "CONSOLE"],
         stars: 3,
         path: "img/celeste.jpg",
-        id: 1
+        id: 1,
+        indie: true
     },
     {
         title: "Night in the Woods",
@@ -15,7 +16,8 @@ let games = [
         platforms : ["PC", "CONSOLE"],
         stars: 2,
         path: "img/nightInTheWoods.jpg",
-        id: 2
+        id: 2,
+        indie: true
     },
     {
         title: "One shot",
@@ -24,7 +26,8 @@ let games = [
         platforms : ["PC", "CONSOLE"],
         stars: 5,
         path: "img/oneShot.jpg",
-        id: 3
+        id: 3,
+        indie: true
     },
     {
         title: "The whitchs house",
@@ -33,7 +36,8 @@ let games = [
         platforms : ["PC"],
         stars: 0,
         path: "img/theWithchsHouse.jpg",
-        id: 4
+        id: 4,
+        indie: true
     }
 ];
 

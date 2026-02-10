@@ -1,7 +1,10 @@
-import { getGames, createGame, deleteGame } from "../server/requisicoes.js";
+import { getGames, createGame, deleteGame, updateGame } from "../server/requisicoes.js";
 
 const form = document.getElementById("addGameForm");
 const gamesList = document.getElementById("gamesList");
+const submitBtn = document.getElementById("submitBtn");
+const cancelBtn = document.getElementById("cancelBtn");
+const gameIdInput = document.getElementById("gameId");
 
 async function loadGames() {
     try {
@@ -30,17 +33,47 @@ function renderList(games) {
                     <small>ID: ${game.id}</small>
                 </div>
             </div>
-            <button class="delete-btn" data-id="${game.id}">Excluir</button>
+            <div>
+                <button class="manage-btn" style="background-color: #ffc107; color: black; margin-right: 5px;" onclick='editGame(${JSON.stringify(game).replace(/'/g, "&#39;")})'>Editar</button>
+                <button class="delete-btn" data-id="${game.id}">Excluir</button>
+            </div>
         `;
         
         gamesList.appendChild(div);
     });
 }
 
+// Make editGame available globally
+window.editGame = (game) => {
+    document.getElementById("title").value = game.title;
+    document.getElementById("developer").value = game.developer;
+    document.getElementById("releaseYear").value = game.releaseYear;
+    document.getElementById("price").value = game.price || 0;
+    document.getElementById("path").value = game.path;
+    document.getElementById("platform").value = game.platforms ? game.platforms[0] : (game.platform || "PC");
+    document.getElementById("about").value = game.about || "";
+    gameIdInput.value = game.id;
+    
+    submitBtn.textContent = "Atualizar Jogo";
+    cancelBtn.style.display = "inline-block";
+    window.scrollTo(0, 0);
+};
+
+function resetForm() {
+    form.reset();
+    gameIdInput.value = "";
+    submitBtn.textContent = "Salvar Jogo";
+    cancelBtn.style.display = "none";
+}
+
+cancelBtn.addEventListener("click", resetForm);
+
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
     
-    const newGame = {
+    const id = gameIdInput.value;
+    
+    const gameData = {
         title: document.getElementById("title").value,
         developer: document.getElementById("developer").value,
         releaseYear: parseInt(document.getElementById("releaseYear").value),
@@ -49,17 +82,25 @@ form.addEventListener("submit", async (e) => {
         platform: document.getElementById("platform").value,
         platforms: [document.getElementById("platform").value], // For compatibility
         about: document.getElementById("about").value,
-        stars: 0
+        stars: 0 // Default or preserve? For now default.
     };
+    
+    // Preserve ID if updating
+    if (id) gameData.id = id;
 
     try {
-        await createGame(newGame);
-        alert("Jogo adicionado com sucesso!");
-        form.reset();
+        if (id) {
+            await updateGame(id, gameData);
+            alert("Jogo atualizado com sucesso!");
+        } else {
+            await createGame(gameData);
+            alert("Jogo adicionado com sucesso!");
+        }
+        resetForm();
         loadGames();
     } catch (error) {
-        console.error("Erro ao adicionar:", error);
-        alert("Erro ao adicionar jogo.");
+        console.error("Erro ao salvar:", error);
+        alert("Erro ao salvar jogo.");
     }
 });
 

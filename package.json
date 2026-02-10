@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "json-server --watch server/db.json --port 3000 --static ."
+    "start": "npm install && json-server --watch server/db.json --port 3000 --static ."
   },
   "devDependencies": {
     "json-server": "^1.0.0-beta.5"

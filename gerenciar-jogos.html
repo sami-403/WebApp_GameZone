@@ -112,8 +112,9 @@
     <div class="management-container">
         <!-- Form Section -->
         <div class="form-section">
-            <h2>Adicionar Novo Jogo</h2>
+            <h2>Adicionar / Editar Jogo</h2>
             <form id="addGameForm">
+                <input type="hidden" id="gameId">
                 <div class="form-group">
                     <label for="title">Título do Jogo</label>
                     <input type="text" id="title" required>
@@ -146,7 +147,8 @@
                     <label for="about">Descrição</label>
                     <textarea id="about" rows="3"></textarea>
                 </div>
-                <button type="submit" class="manage-btn">Adicionar Jogo</button>
+                <button type="submit" class="manage-btn" id="submitBtn">Salvar Jogo</button>
+                <button type="button" class="manage-btn" id="cancelBtn" style="background-color: #555; display: none;">Cancelar</button>
             </form>
         </div>
 

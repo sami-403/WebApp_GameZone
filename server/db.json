@@ -150,16 +150,18 @@
       "about": "Ação clássica de correr e atirar com foco em batalhas de chefes, inspirado em desenhos animados da década de 1930."
     },
     {
-      "id": "12",
       "title": "Call of Duty: Black Ops III",
       "developer": "Treyarch",
       "releaseYear": 2015,
+      "price": 130,
+      "path": "img/da4d0bfa-e9b8-492d-80bf-08aa25f54cea.jpg",
+      "platform": "CONSOLE",
       "platforms": [
         "CONSOLE"
       ],
-      "price": 180,
-      "path": "img/da4d0bfa-e9b8-492d-80bf-08aa25f54cea.jpg",
-      "about": "Shooter em primeira pessoa futurista com modos campanha, multiplayer e zumbis."
+      "about": "Shooter em primeira pessoa futurista com modos campanha, multiplayer e zumbis.",
+      "stars": 0,
+      "id": "12"
     },
     {
       "id": "13",
@@ -198,16 +200,18 @@
       "about": "Aventura de plataforma 3D onde Mario viaja através de galáxias desafiando a gravidade."
     },
     {
-      "id": "16",
       "title": "Minecraft",
       "developer": "Mojang Studios",
       "releaseYear": 2011,
-      "platforms": [
-        "PC"
-      ],
       "price": 99,
       "path": "img/Minecraft.jpg",
-      "about": "Jogo de sandbox sobre colocar blocos e ir em aventuras. Explore mundos gerados aleatoriamente e construa coisas incríveis."
+      "platform": "MOBILE",
+      "platforms": [
+        "MOBILE"
+      ],
+      "about": "Jogo de sandbox sobre colocar blocos e ir em aventuras. Explore mundos gerados aleatoriamente e construa coisas incríveis.",
+      "stars": 0,
+      "id": "16"
     },
     {
       "id": "17",

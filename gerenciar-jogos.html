@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a511313589.js" crossorigin="anonymous"></script>
+    <title>GameZone - Gerenciar Jogos</title>
+    <style>
+        .management-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: white;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .form-section, .list-section {
+            flex: 1;
+            min-width: 300px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 5px;
+            color: #66c0f4;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #414141;
+            background: #1a1a1a;
+            color: white;
+        }
+        .manage-btn {
+            background-color: #66c0f4;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .manage-btn:hover {
+            background-color: #4da8d6;
+        }
+        .game-list-item {
+            background: #1a1a1a;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .game-list-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        .game-info-mini {
+            display: flex;
+            align-items: center;
+        }
+        .delete-btn {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <nav class="nav">
+            <a class="logo-gamezone" href="#">GameZone</a>
+            <ul class="lista-nav">
+                <a href="index.html"><li>Catálogo</li></a>
+                <a href="promocoes.html"><li>Promoções</li></a>
+                <a href="indie.html"><li>Indie</li></a>
+                <a href="lancamentos.html"><li>Lançamentos</li></a>
+                <a href="vendidos.html"><li>Mais vendidos</li></a>
+                <a href="gerenciar-jogos.html"><li>Gerenciar</li></a>
+                <a href="fale-conosco.html"><li>Fale conosco</li></a>
+            </ul>
+             <div class="mobile-menu-icon">
+                <button>
+                    <img class="icon" src="img/menu_white_36dp.svg" alt="" />
+                </button>
+            </div>
+            <div class="mobile-menu">
+                <ul class="mobile_nav_list">
+                     <a href="index.html"><li>Catálogo</li></a><br />
+                    <a href="promocoes.html"><li>Promoções</li></a><br />
+                    <a href="indie.html"><li>Indie</li></a><br />
+                    <a href="lancamentos.html"><li>Lançamentos</li></a><br />
+                    <a href="vendidos.html"><li>Mais vendidos</li></a><br />
+                     <a href="gerenciar-jogos.html"><li>Gerenciar</li></a><br />
+                    <a href="fale-conosco.html"><li>Fale conosco</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="management-container">
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Adicionar Novo Jogo</h2>
+            <form id="addGameForm">
+                <div class="form-group">
+                    <label for="title">Título do Jogo</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="developer">Desenvolvedora</label>
+                    <input type="text" id="developer" required>
+                </div>
+                 <div class="form-group">
+                    <label for="releaseYear">Ano de Lançamento</label>
+                    <input type="number" id="releaseYear" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Preço (R$)</label>
+                    <input type="number" id="price" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="path">URL da Imagem</label>
+                    <input type="text" id="path" placeholder="img/nome-do-arquivo.jpg" required>
+                </div>
+                <div class="form-group">
+                    <label for="platform">Plataforma Principal</label>
+                    <select id="platform">
+                        <option value="PC">PC</option>
+                        <option value="CONSOLE">Console</option>
+                        <option value="MOBILE">Mobile</option>
+                    </select>
+                </div>
+                 <div class="form-group">
+                    <label for="about">Descrição</label>
+                    <textarea id="about" rows="3"></textarea>
+                </div>
+                <button type="submit" class="manage-btn">Adicionar Jogo</button>
+            </form>
+        </div>
+
+        <!-- List Section -->
+        <div class="list-section">
+            <h2>Jogos Cadastrados</h2>
+            <div id="gamesList">
+                <!-- Jogos serão carregados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/mobileMenu.js"></script>
+    <script type="module" src="./scripts/manageGames.js"></script>
+</body>
+</html>
